@@ -1,0 +1,17 @@
+item=###2###
+coast=###4###
+category=###6###
+expireDay=###8###
+import dictionary_receipes
+if not item in dictionary_receipes.receipes['items']:
+    dictionary_receipes.receipes['items'].append(item)
+    if not category in dictionary_receipes.receipes['category']:
+        dictionary_receipes.receipes['category'][category]=[]
+    item_to_category=item+','
+    dictionary_receipes.receipes['category'][category].append(item_to_category)
+    if not expireDay in dictionary_receipes.receipes['expireDay']:
+        dictionary_receipes.receipes['expireDay'][expireDay]=[]
+    item_to_date=item+','
+    dictionary_receipes.receipes['expireDay'][expireDay].append(item_to_date)
+else:
+    print('item alredy exists')
